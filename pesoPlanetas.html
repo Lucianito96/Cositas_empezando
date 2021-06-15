@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peso en Distintos planetas</title>
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+</head>
+<style>
+    body {
+    background:url("https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/por-que-el-espacio-es-frio-1617903788.jpg?crop=1.00xw:1.00xh;0,0&resize=980:*") no-repeat center center fixed;
+    color: honeydew;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    }
+    #parrafo_1 {
+        font-size: large;
+        font-weight: bolder;
+    }
+    #parrafo_2 {
+        font-size:small;
+        font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        position: absolute; top: 90%;
+    } 
+  #tierra{
+    color: white;
+    position: absolute;top: 93%;left: 10%;
+    font-weight: bold; 
+    animation: zoomInDown; 
+    animation-duration: 5s; 
+  }
+  #imagen_t{
+    position: absolute;top: 40%; right: 59.5%;
+    animation: bounce;
+  }
+  #marte{
+    color: white;
+    position: absolute;top: 93%;left: 45%;
+    font-weight: bold; 
+    animation: zoomInDown; 
+    animation-duration: 5s; 
+  }
+  #imagen_m{
+    position: absolute;top: 60%; right: 42%;
+  }
+  #jupiter{
+    color: white;
+    position: absolute;top: 93%;left: 75%;
+    font-weight: bold; 
+    animation: zoomInDown; 
+    animation-duration: 5s; 
+  }
+  #imagen_j{
+    position: absolute;top: 10%; left: 45.5%;
+  }
+  #seleccionador {
+    position: absolute;top: 10%;
+    font-size: large;
+  }
+  #raya {
+    position: absolute; top: 15%;
+  }
+</style>
+<body>
+  <div id="intro" class="animate__animated animate__backInLeft">
+    <h1 class="title">Esta es un calculador de pesos en distintos planetas</h1>
+    <br>
+    <p id="parrafo_1">Ingresa tu peso(sólo el número) y luego presiona el boton para comenzar</p>
+    <label for = "peso">Peso:</label>
+    <input class="form-control" id="peso">
+    <button id="boton">Presionar</button>
+    <br>
+    <p id="parrafo_2">*ingresar peso en kg<br>
+                       *ingresar decimales con "."<br>
+                        *si se coloca un [ . ] por pavor luego colocar un 0, no dejar en blanco</p>
+    <p id = "seleccionador">Elige los planetas para calcular: 
+     <select name="color" id="opcion" onchange="ShowSelected();">
+              <option value="0"></option>  
+              <option value="1">Tierra</option>
+              <option value="2">Marte</option>
+              <option value="3">Júpiter</option>
+              <option value="4">Todos los anteriores</option>
+      </select>
+  </div>
+    <p id="tierra"></p>
+    <div id="imagen_t"></div>
+    <p id="marte"></p>
+    <div id="imagen_m"></div>
+    <p id="jupiter"></p>
+    <div id="imagen_j"></div>
+    <canvas id="raya" height="10" width="700" class="animate__animated animate__slideInLeft"></canvas>
+    <script src="js/pesoPlanetas.js"></script>
+</body>
+</html>
